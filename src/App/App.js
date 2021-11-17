@@ -1,29 +1,37 @@
 import React from "react";
-import "./App.css";
 import Button from "./components/Button/Button";
 
-function App() {
-  return (
-    <div className="App">
-      <Button text="OK" onButtonClicked={(arg) => alert("click sur button")} />
-      <Button
-        text="Cancel"
-        onButtonClicked={(arg) => alert("message")}
-        bgColor="tomato"
-      />
-      <Button text="Autre option" onButtonClicked={(arg) => alert("message")} />
-      <Button
-        text="Debug"
-        onButtonClicked={(arg) => alert("message")}
-        color="yellow"
-      />
-      <Button
-        text="Et autre trucs nuls"
-        onButtonClicked={(arg) => alert("message")}
-      />
-      <Button text="bisous" onButtonClicked={(arg) => alert("message")} />
-    </div>
-  );
+class App extends React.Component {
+  counter = 0;
+  constructor(props) {
+    super(props);
+    this.state = { counter: 0, value2: 0 };
+  }
+  componentDidUpdate() {
+    console.log('%c%s', 'font-size:42pt;color:red;background-color:skyblue', 'le changement est pret et effectif ', this.state.counter);
+  }
+  render() {
+    return (
+      <div className="App">
+        counter:{this.state.counter}
+        <br />
+        <Button
+          text="Soustraire 1"
+          onButtonClicked={() => {
+            this.setState({ counter: this.state.counter - 1 });
+          }}
+          bgColor="red"
+        />
+        <Button
+          text="Ajouter 1"
+          onButtonClicked={() => {
+            this.setState({ counter: this.state.counter + 1 });
+          }}
+          bgColor="green"
+        />
+      </div>
+    );
+  }
 }
 
 export default App;

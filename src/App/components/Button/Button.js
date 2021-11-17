@@ -12,7 +12,11 @@ const Button = (props) => {
   return (
     <button
       className={style.Button}
-      style={{ backgroundColor: props.bgColor, color: props.color }}
+      style={{
+        backgroundColor: props.bgColor,
+        color: props.color,
+        ...props.style,
+      }}
       onClick={(evt) => props.onButtonClicked()}
     >
       {props.text}
@@ -25,6 +29,7 @@ Button.propTypes = {
   onButtonClicked: PropTypes.func.isRequired,
   bgColor: PropTypes.string,
   color: PropTypes.string,
+  style: PropTypes.object,
 };
 Button.defaultProps = {
   bgColor: "yellowgreen",
