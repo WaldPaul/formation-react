@@ -8,7 +8,7 @@ import PropTypes from "prop-types";
  */
 
 const Button = (props) => {
-  const [clicked, setclicked] = useState({state:false, autreValue:'Demat la Bretagne'})
+  const [clicked, setClicked] = useState({state:false, autreValue:'Demat la Bretagne'})
   console.log(props);
   return (
     <button
@@ -18,7 +18,13 @@ const Button = (props) => {
         color: props.color,
         ...props.style,
       }}
-      onClick={(evt) => props.onButtonClicked()}
+      onClick={(evt) => {
+        setClicked({...clicked, state:true})
+        setTimeout(()=>{
+          setClicked({...clicked, state:false});
+        },200)
+        props.onButtonClicked()
+      }}
     >
       {props.text}
     </button>
