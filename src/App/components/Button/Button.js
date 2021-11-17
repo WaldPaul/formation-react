@@ -12,7 +12,7 @@ const Button = (props) => {
   console.log(props);
   return (
     <button
-      className={style.Button}
+      className={`${style.Button}${clicked.state?' '+style.clicked:''}`}
       style={{
         backgroundColor: props.bgColor,
         color: props.color,
