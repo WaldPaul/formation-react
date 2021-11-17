@@ -10,3 +10,7 @@
 .Button:hover {
     box-shadow: 10px 10px 25px slategray;
 }
+.clicked {
+    box-shadow: 5px 5px 25px slategray !important;
+    border: 1px solid slategray;
+}

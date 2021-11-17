@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import style from "./Button.module.css";
 import PropTypes from "prop-types";
 /**
@@ -8,6 +8,7 @@ import PropTypes from "prop-types";
  */
 
 const Button = (props) => {
+  const [clicked, setclicked] = useState({state:false, autreValue:'Demat la Bretagne'})
   console.log(props);
   return (
     <button
