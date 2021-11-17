@@ -8,13 +8,24 @@ function App() {
       <Button text="OK" onButtonClicked={(arg)=>
         alert('click sur button')
       }/>
-      <Button text="Cancel" onButtonClicked={()=>
+      <Button text="Cancel" 
+        onButtonClicked={(arg)=> alert('message')
+        
+      }
+        bgColor="tomato"
+      />
+      <Button text="Autre option" onButtonClicked={(arg)=>
         alert('message')
       }/>
-      <Button text="Autre option"/>
-      <Button text="Debug"/>
-      <Button text="Et autre trucs nuls"/>
-      <Button text="bisous"/>
+      <Button text="Debug" onButtonClicked={(arg)=>
+        alert('message')
+      }/>
+      <Button text="Et autre trucs nuls" onButtonClicked={(arg)=>
+        alert('message')
+      }/>
+      <Button text="bisous" onButtonClicked={(arg)=>
+        alert('message')
+      }/>
     </div>
   );
 }
