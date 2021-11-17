@@ -5,8 +5,12 @@ import Button from './components/Button/Button';
 function App() {
   return (
     <div className="App">
-      <Button text="OK"/>
-      <Button text="Cancel"/>
+      <Button text="OK" onButtonClicked={(arg)=>
+        alert('click sur button')
+      }/>
+      <Button text="Cancel" onButtonClicked={()=>
+        alert('message')
+      }/>
       <Button text="Autre option"/>
       <Button text="Debug"/>
       <Button text="Et autre trucs nuls"/>
