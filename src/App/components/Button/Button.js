@@ -7,7 +7,8 @@ import "./Button.css"
  */
 
 const Button = (props) => {
-  return <button className="Button">Benjamin button</button>;
+  console.log(props);
+  return <button className="Button">{props.text}</button>;
 };
 
 
