@@ -2,13 +2,18 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import styles from './MemeViewer.module.scss';
 
+//interface I_Props {
+//  meme: ici le type de l'objet
+//}
+
 const MemeViewer = (props) => (
   <svg 
     className={styles.MemeViewer} 
     ata-testid="MemeViewer" 
-    viewBox={`0 0 ${props.image.w} ${props.image.h}`}
+    viewBox={`0 0 ${props.image?props.image.w:10000} ${props.image?props.image.h:10000}`}
     >
-    <image href={props.image.url} x="0" y="0"/>
+    {/* Note : le && est pour verifier que l'image existe, on pourrait faire une ternaire. C'est propre à React dans le return */}
+    {props.image && <image href={props.image.url} x="0" y="0"/>}
     <text
       x={props.meme.x}
       y={props.meme.y}
@@ -21,6 +26,8 @@ const MemeViewer = (props) => (
   </svg>
 );
 
+
+// En typescript : replacer par une interface
 MemeViewer.propTypes = {
   meme: PropTypes.object.isRequired,
   image: PropTypes.object,
