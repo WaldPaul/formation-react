@@ -9,7 +9,30 @@ class App extends React.Component {
   counter = 0;
   constructor(props) {
     super(props);
-    this.state = { counter: 0, value2: 0 };
+    this.state = { current: {
+        imageId:0,
+        titre:'1er meme',
+        text:'look behind you',
+        x:370,
+        y:530,
+        fontSize:27,
+        color:"tomato",
+        fontWeight:'900',
+        underline: true,
+        italic:true,
+        frameX:0,
+        frameY:0,
+    }, 
+    images: [
+      {
+        id:0,
+        url:"img/Quiz-Kid.jpg",
+        titre:"Quiz-Kid",
+        w:778,
+        h:736,
+      }
+    ]
+  };
   }
   componentDidUpdate() {
     console.log('%c%s', 'font-size:42pt;color:red;background-color:skyblue', 'le changement est pret et effectif ', this.state.counter);
@@ -19,33 +42,25 @@ class App extends React.Component {
       <>
         <Header/>
         <div className="App">
-        <FlexLayout>
-                  <MemeViewer 
-          meme={{
-            titre:'1er meme',
-            text:'look behind you',
-            x:370,
-            y:530,
-            fontSize:27,
-            color:"tomato",
-            fontWeight:'900',
-            underline: true,
-            italic:true,
-            frameX:0,
-            frameY:0,
-          }} 
-          image={{
-            id:0,
-            url:"img/Quiz-Kid.jpg",
-            titre:"Quiz-Kid",
-            w:778,
-            h:736,
-          }}
+          <FlexLayout>
+          <MemeViewer 
+            meme={
+              this.state.current
+            } 
+            image={
+              this.state.images.find((e)=>e.id===this.state.current.imageId)
+            }
 
-          />
+            />
 
-          <MemeForm/>
-
+            <MemeForm
+              meme={this.state.current} 
+              onMemeChange={(meme)=> {
+                this.setState({current: meme})
+              }
+              }
+              images={this.state.images}
+            />
           </FlexLayout>
         </div>
       </>
