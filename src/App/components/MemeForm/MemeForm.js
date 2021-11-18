@@ -32,12 +32,20 @@ function MemeForm(props) {
         <div><label htmlFor="f_y">y:</label><br /><input type="number" className={styles.smallInput} value={props.meme.y} /></div>
       </div>
 
-      <hr />
+        <label htmlFor="f_color">Couleur</label><input type="color" id="f_color" value={props.meme.color}></input>
+        <div className={styles.half}>
+            <div>
+                <label htmlFor="f_underline">Underline</label><input type="checkbox" id="f_underline" checked={props.meme.underline}></input>
+            </div>
+            <div>
+                <label htmlFor="f_italic">italic</label><input type="checkbox" id="f_italic" checked={props.meme.italic}></input>
+            </div>
+        </div>
+        <hr />
       <div className={styles.half}>
         <Button type="reset" bgColor="tomato" text="clear" />
         <Button type="submit" bgColor="skyblue" text="save" />
       </div>
-
     </form>
   </div>;
 }

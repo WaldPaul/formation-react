@@ -16,7 +16,7 @@ class App extends React.Component {
         x:370,
         y:530,
         fontSize:27,
-        color:"tomato",
+        color:"red",
         fontWeight:'900',
         underline: true,
         italic:true,
