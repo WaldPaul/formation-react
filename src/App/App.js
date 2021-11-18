@@ -29,11 +29,11 @@ class App extends React.Component {
           frameY:0,
         }} 
         image={{
-          // id:0,
-          // url:"img/Quiz-Kid.jpg",
-          // titre:"Quiz-Kid",
-          // w:778,
-          // h:736,
+          id:0,
+          url:"img/Quiz-Kid.jpg",
+          titre:"Quiz-Kid",
+          w:778,
+          h:736,
         }}
 
         />
