@@ -19,7 +19,8 @@ class App extends React.Component {
       <>
         <Header/>
         <div className="App">
-          <MemeViewer 
+        <FlexLayout>
+                  <MemeViewer 
           meme={{
             titre:'1er meme',
             text:'look behind you',
@@ -45,7 +46,7 @@ class App extends React.Component {
 
           <MemeForm/>
 
-          <FlexLayout/>
+          </FlexLayout>
         </div>
       </>
     );

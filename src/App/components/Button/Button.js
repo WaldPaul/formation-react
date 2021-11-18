@@ -47,6 +47,7 @@ Button.propTypes = {
   bgColor: PropTypes.string,
   color: PropTypes.string,
   style: PropTypes.object,
+  type: PropTypes.object,
 };
 Button.defaultProps = {
   bgColor: "yellowgreen",

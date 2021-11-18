@@ -1,6 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import styles from './MemeViewer.module.scss';
+import styles from './MemeViewer.module.css';
 
 //interface I_Props {
 //  meme: ici le type de l'objet

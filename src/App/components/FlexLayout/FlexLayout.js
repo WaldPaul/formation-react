@@ -1,7 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import styles from './FlexLayout.module.scss';
-import { render } from 'node-sass';
+import styles from './FlexLayout.module.css';
+
 
 const FlexLayout = (props) => {
   console.log('FlexLayout')
@@ -10,7 +10,7 @@ const FlexLayout = (props) => {
 
     return(
       <div className={styles.FlexLayout} data-testid="FlexLayout">
-        
+        {props.children}        
       </div>
     )
   

@@ -1,7 +1,7 @@
 {
   "usesTypeScript": false,
   "usesCssModule": true,
-  "cssPreprocessor": "scss",
+  "cssPreprocessor": "css",
   "testLibrary": "Testing Library",
   "component": {
     "default": {
@@ -11,13 +11,13 @@
       "withStory": false,
       "withLazy": false
     },
-    "hooked": {
+    "hooked":{
       "path": "src/App/components",
       "withStyle": true,
       "withTest": true,
       "withStory": false,
       "withLazy": false,
-      "customTemplates" :{
+      "customTemplates":{
         "component":"grc-templates/hook_func/TemplateName.js"
       }
     }
