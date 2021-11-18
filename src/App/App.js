@@ -1,5 +1,7 @@
 import React from "react";
 import Button from "./components/Button/Button";
+import FlexLayout from "./components/FlexLayout/FlexLayout";
+import MemeForm from "./components/MemeForm/MemeForm";
 import MemeViewer from "./components/MemeViewer/MemeViewer";
 
 class App extends React.Component {
@@ -14,6 +16,7 @@ class App extends React.Component {
   render() {
     return (
       <div className="App">
+        <Header/> 
         <MemeViewer 
         meme={{
           titre:'1er meme',
@@ -37,6 +40,10 @@ class App extends React.Component {
         }}
 
         />
+
+        <MemeForm/>
+
+        <FlexLayout/>
       </div>
     );
   }
