@@ -3,28 +3,28 @@ import PropTypes from 'prop-types'
 
 
 const initialState={}
-function TemplateName(props) {
+function MemeForm(props) {
     const [state, setstate] = useState(initialState);
     useEffect(() => {
-        effect
+        //effect
         return () => {
-            cleanup
+            //cleanup
         }
     }, [state])
     return (
-        <div data-testid="TemplateName">
-            templateName
+        <div data-testid="MemeForm">
+            memeForm
         </div>
     )
 }
 
-TemplateName.propTypes = {
+MemeForm.propTypes = {
 
 }
 
-TemplateName.defaultProps = {
+MemeForm.defaultProps = {
 
 }
 
-export default TemplateName
+export default MemeForm
 
