@@ -14,7 +14,7 @@ function MemeForm(props) {
   return <div data-testid="MemeForm" className={styles.MemeForm}>
     <form>
       <h1>Titre</h1>
-      <input type="text" id="f_titre" placeholder="saisir titre" />
+      <input type="text" id="f_titre" placeholder="saisir titre" value={props.meme.titre} />
       <hr />
       <h2>Image</h2>
       <select value={props.meme.imageId} >
@@ -26,10 +26,10 @@ function MemeForm(props) {
       </select>
       <hr />
       <h2>text</h2>
-      <input type="text" />
+      <input type="text" value={props.meme.text} />
       <div className={styles.half}>
-        <div><label htmlFor="f_x">x:</label><br /><input type="number" className={styles.smallInput} /></div>
-        <div><label htmlFor="f_y">y:</label><br /><input type="number" className={styles.smallInput} /></div>
+        <div><label htmlFor="f_x">x:</label><br /><input type="number" className={styles.smallInput} value={props.meme.x} /></div>
+        <div><label htmlFor="f_y">y:</label><br /><input type="number" className={styles.smallInput} value={props.meme.y} /></div>
       </div>
 
       <hr />
