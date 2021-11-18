@@ -16,7 +16,7 @@ class App extends React.Component {
         x:370,
         y:530,
         fontSize:27,
-        color:"red",
+        color:"#c000",
         fontWeight:'900',
         underline: true,
         italic:true,
@@ -30,7 +30,21 @@ class App extends React.Component {
         titre:"Quiz-Kid",
         w:778,
         h:736,
-      }
+      },
+      {
+        id:1,
+        url:"img/spongebob_tomb.jpg",
+        titre:"spongebob_tomb",
+        w:1347,
+        h:2048,
+      },
+      {
+        id:2,
+        url:"img/yes_no.jpg",
+        titre:"yes_no",
+        w:1079,
+        h:857,
+      },
     ]
   };
   }
