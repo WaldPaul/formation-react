@@ -10,7 +10,9 @@ import PropTypes from "prop-types";
 const Button = (props) => {
   const [clicked, setClicked] = useState({state:false, autreValue:'Demat la Bretagne'})
   useEffect(() => {
-    console.log()
+    console.log(clicked)
+    // execution que si etat du button clicked
+    if(!clicked.state)return;
     setTimeout(()=>{
         setClicked({...clicked, state:false});
       },300)
