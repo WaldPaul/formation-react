@@ -22,7 +22,7 @@
     "test": "react-scripts test",
     "eject": "react-scripts eject",
     "genHooked": "npx generate-react-cli c --type=hooked",
-    "json": "json-server p 5629 db/db.json"
+    "json": "json-server -p 5629 db/db.json"
   },
   "eslintConfig": {
     "extends": [
