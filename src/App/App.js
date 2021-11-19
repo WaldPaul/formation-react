@@ -4,6 +4,8 @@ import FlexLayout from "./components/FlexLayout/FlexLayout";
 import Header from "./components/Header/Header";
 import MemeForm from "./components/MemeForm/MemeForm";
 import MemeViewer from "./components/MemeViewer/MemeViewer";
+import "./config/config.js";
+import store from './store/store';
 
 class App extends React.Component {
   counter = 0;
@@ -16,40 +18,23 @@ class App extends React.Component {
         x:370,
         y:530,
         fontSize:27,
-        color:"#c000",
+        color:"#b2e",
         fontWeight:'900',
         underline: true,
         italic:true,
         frameX:0,
         frameY:0,
     }, 
-    images: [
-      {
-        id:0,
-        url:"img/Quiz-Kid.jpg",
-        titre:"Quiz-Kid",
-        w:778,
-        h:736,
-      },
-      {
-        id:1,
-        url:"img/spongebob_tomb.jpg",
-        titre:"spongebob_tomb",
-        w:1347,
-        h:2048,
-      },
-      {
-        id:2,
-        url:"img/yes_no.jpg",
-        titre:"yes_no",
-        w:1079,
-        h:857,
-      },
-    ]
+    images: []
   };
   }
+  componentDidMount() {
+    fetch('${REST_ADR}${REST_RESOURCES.memes}')
+      .then(f=>f.json())
+      .then(arr=>this.setState({images:arr}))
+  }
   componentDidUpdate() {
-    console.log('%c%s', 'font-size:42pt;color:red;background-color:skyblue', 'le changement est pret et effectif ', this.state.counter);
+    console.log('%c%s', 'font-size:42pt;color:red;background-color:skyblue', 'le changement est pret et effectif ' + JSON.stringify(this.state));
   }
   render() {
     return (
