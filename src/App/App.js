@@ -9,6 +9,9 @@ import MemeThumbnail from "./components/MemeThumbnail/MemeThumbnail";
 import MemeViewer from "./components/MemeViewer/MemeViewer";
 import { REST_ADR, REST_RESSOURCES } from "./config/config.js";
 import store , { currentInitialState, ressourcesInitialState } from './store/store';
+import { BrowserRouter as Router, Route, Switch } from 'react-router-dom'
+import Navbar from "./components/Navbar/Navbar";
+
 
 class App extends React.Component {
   counter = 0;
@@ -24,32 +27,41 @@ class App extends React.Component {
       <>
         <Header/>
         <div className="App">
-          {/* <FlexLayout>
-          <MemeViewer 
-            meme={
-              this.props.current
-            } 
-            image={
-              this.props.images.find((e)=>e.id===this.props.current.imageId)
-            }
+          <Navbar></Navbar>
+          <Switch>
+            <Route path='/' exact>
+              <h1>Message</h1>
+            </Route>
+            <Route path='/thumbnail'>
+              <MemeThumbnail
+                // memes={this.props.memes}
+                // images={this.props.images}
+                
+              >
+              </MemeThumbnail>
+            </Route>
+            <Route path='/edit'>
+            <FlexLayout>
+              <MemeViewer 
+              meme={
+                this.props.current
+              } 
+              image={
+                this.props.images.find((e)=>e.id===this.props.current.imageId)
+              }
 
-            />
+              />
 
-            <MemeForm 
-              // onMemeChange={(meme)=> {
-              //   this.setState({current: meme})
-              // }
-              // }
-              // images={this.state.images}
-            />
-          </FlexLayout> */}
-          <MemeThumbnail
-            memes={this.props.memes}
-            images={this.props.images}
-            
-          >
-            
-          </MemeThumbnail>
+              <MemeForm 
+                // onMemeChange={(meme)=> {
+                //   this.setState({current: meme})
+                // }
+                // }
+                // images={this.state.images}
+              />
+            </FlexLayout>
+            </Route>
+          </Switch>
         </div>
       </>
     );

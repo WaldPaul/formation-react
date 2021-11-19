@@ -20,7 +20,7 @@ function ressourceReducer(state = ressourcesInitialState, action) {
       Promise.all([pimage,pmemes])
         .then(arr_arr=>{
             console.log('\n\n',action)
-            store.dispatch({type:'INIT_ARRAY',values:arr_arr})
+            store.dispatch({type:'INIT_ARRAYS',values:arr_arr})
         })
         //.then((arr) => this.setState);
       return state;
