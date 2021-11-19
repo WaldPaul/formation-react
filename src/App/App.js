@@ -4,7 +4,7 @@ import FlexLayout from "./components/FlexLayout/FlexLayout";
 import Header from "./components/Header/Header";
 import MemeForm from "./components/MemeForm/MemeForm";
 import MemeViewer from "./components/MemeViewer/MemeViewer";
-import "./config/config.js";
+import { REST_ADR, REST_RESSOURCES } from "./config/config.js";
 import store from './store/store';
 
 class App extends React.Component {
@@ -29,7 +29,7 @@ class App extends React.Component {
   };
   }
   componentDidMount() {
-    fetch('${REST_ADR}${REST_RESOURCES.memes}')
+    fetch(`${REST_ADR}${REST_RESSOURCES.memes}`)
       .then(f=>f.json())
       .then(arr=>this.setState({images:arr}))
   }
