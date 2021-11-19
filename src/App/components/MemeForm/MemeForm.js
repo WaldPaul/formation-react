@@ -2,15 +2,11 @@ import React, { useEffect, useState } from "react";
 import PropTypes from "prop-types";
 import Button from "../Button/Button";
 import styles from './MemeForm.module.css'
+import { connect } from "react-redux";
+import store, { CURRENT_PUBLIC_ACTION } from "../../store/store";
+
 const initialState = {};
 function MemeForm(props) {
-  const [state, setstate] = useState(initialState);
-  useEffect(() => {
-    //didMount + didUpdate
-    return () => {
-      //willUnmount
-    };
-  }, [state]);
   return <div data-testid="MemeForm" className={styles.MemeForm}>
     <form>
       <h1>Titre</h1>
@@ -72,4 +68,20 @@ MemeForm.propTypes = {
     onMemeChange: PropTypes.func.isRequired,
 };
 MemeForm.defaultProps = {};
-export default MemeForm;
+
+function mapStateToProps(state,own){
+    return {
+      ...own,
+      meme:state.current,
+      images:state.ressources.images
+    }
+  }
+  function mapDispatchToProps(dispatch)
+  {
+    return{
+        onMemeChange:(meme)=>dispatch({type:CURRENT_PUBLIC_ACTION.UPDATE_CURRENT, value:meme}) 
+    }
+  }
+
+  export default connect(mapStateToProps,mapDispatchToProps)(MemeForm);
+  export const unConnectedMemeForm=MemeForm;

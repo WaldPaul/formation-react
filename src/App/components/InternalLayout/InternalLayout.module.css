@@ -1,0 +1,8 @@
+.InternalLayout {
+    display: grid;
+    space:4px;
+}
+.InternalLayout> * {
+    width : 33vh;
+    margin-left: 20 px;
+}
