@@ -20,7 +20,7 @@ function MemeForm(props) {
       <hr />
       <h2>Image</h2>
       <select value={props.meme.imageId} onChange={ (evt)=>
-          props.onMemeChange({...props.images, imageId:Number(evt.target.value)})
+          props.onMemeChange({...props.meme, imageId:Number(evt.target.value)})
       }>
         <option value="-1">Aucune</option>
         {props.images.map((e,i)=>
